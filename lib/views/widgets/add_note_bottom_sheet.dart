@@ -8,51 +8,89 @@ class AddNoteBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(
+    return const Padding(
+      padding: EdgeInsets.only(
         top: 38,
         right: 20,
         left: 20,
       ),
       child: SingleChildScrollView(
-        child: Column(
-          children: [
-            const CustomTextField(
-              hintText: "Title",
-            ),
-            const SizedBox(
-              height: 24,
-            ),
-            const CustomTextField(
-              hintText: "Content",
-              maxLines: 6,
-            ),
-            const SizedBox(
-              height: 50,
-            ),
-            CustomMainButton(
-              text: "Add Note",
-              onPressed: () {},
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 100),
-              child: CustomMainButton(
-                text: "Cancel",
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                color: const Color(0xff8D070F),
-                height: 45,
-              ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-          ],
-        ),
+        child: AddNoteForm(),
+      ),
+    );
+  }
+}
+
+class AddNoteForm extends StatefulWidget {
+  const AddNoteForm({
+    super.key,
+  });
+
+  @override
+  State<AddNoteForm> createState() => _AddNoteFormState();
+}
+
+class _AddNoteFormState extends State<AddNoteForm> {
+  final GlobalKey<FormState> formKey = GlobalKey();
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+  String? title, subTitle;
+
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      key: formKey,
+      autovalidateMode: autovalidateMode,
+      child: Column(
+        children: [
+          CustomTextField(
+            onSaved: (value) {
+              title = value;
+            },
+            hintText: "Title",
+          ),
+          const SizedBox(
+            height: 24,
+          ),
+          CustomTextField(
+            onSaved: (value) {
+              subTitle = value;
+            },
+            hintText: "Content",
+            maxLines: 6,
+          ),
+          const SizedBox(
+            height: 50,
+          ),
+          CustomMainButton(
+            text: "Add Note",
+            onPressed: () {
+              if (formKey.currentState!.validate()) {
+                formKey.currentState!.save();
+              } else {
+                setState(() {
+                  autovalidateMode = AutovalidateMode.always;
+                });
+              }
+            },
+          ),
+          // const SizedBox(
+          //   height: 10,
+          // ),
+          // Padding(
+          //   padding: const EdgeInsets.symmetric(horizontal: 100),
+          //   child: CustomMainButton(
+          //     text: "Cancel",
+          //     onPressed: () {
+          //       Navigator.pop(context);
+          //     },
+          //     color: const Color(0xff8D070F),
+          //     height: 45,
+          //   ),
+          // ),
+          const SizedBox(
+            height: 20,
+          ),
+        ],
       ),
     );
   }
