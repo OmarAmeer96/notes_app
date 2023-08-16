@@ -20,12 +20,9 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 35, left: 20, right: 20),
+      padding: const EdgeInsets.only(top: 45, left: 20, right: 20),
       child: Column(
         children: [
-          const SizedBox(
-            height: 24,
-          ),
           CustomAppBar(
             icon: Icons.done,
             title: "Edit Note",
