@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
+import 'package:notes_app/models/models/note_model.dart';
+import 'package:notes_app/services/show_success_snack_bar.dart';
 import 'package:notes_app/views/widgets/custom_circular_progress_indicator.dart';
 
-import '../../services/show_snack_bar.dart';
+import '../../services/show_error_snack_bar.dart';
 import 'custom_main_button.dart';
 import 'custom_text_field.dart';
 
@@ -27,9 +29,9 @@ class _AddNoteFormState extends State<AddNoteForm> {
       listener: (context, state) {
         if (state is AddNoteSuccess) {
           Navigator.pop(context);
-          showSnackBar(context, state.successMessage);
+          showSuccessSnackBar(context, state.successMessage);
         } else if (state is AddNoteFailure) {
-          showSnackBar(context, state.errorMessage);
+          showErrorSnackBar(context, state.errorMessage);
         }
       },
       child: Form(
@@ -66,6 +68,13 @@ class _AddNoteFormState extends State<AddNoteForm> {
                         onPressed: () {
                           if (formKey.currentState!.validate()) {
                             formKey.currentState!.save();
+                            var noteModel = NoteModel(
+                              title: title!,
+                              subTitle: subTitle!,
+                              date: DateTime.now().toString(),
+                              color: Colors.blue.value,
+                            );
+                            cubit.addNote(noteModel);
                           } else {
                             setState(() {
                               autovalidateMode = AutovalidateMode.always;
