@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/constants.dart';
 
 class CustomCircularProgrssIndicator extends StatelessWidget {
   const CustomCircularProgrssIndicator({super.key});
@@ -8,7 +7,7 @@ class CustomCircularProgrssIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return const CircularProgressIndicator(
       valueColor: AlwaysStoppedAnimation<Color>(
-        kPrimaryColor,
+        Colors.black54,
       ),
     );
   }
