@@ -7,9 +7,11 @@ class CustomAppBar extends StatelessWidget {
     super.key,
     required this.icon,
     required this.title,
+    this.onPressed,
   });
   final IconData icon;
   final String title;
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,10 @@ class CustomAppBar extends StatelessWidget {
           ),
         ),
         const Spacer(),
-        CustomSearchIcon(icon: icon),
+        CustomIcon(
+          icon: icon,
+          onPressed: onPressed,
+        ),
       ],
     );
   }
