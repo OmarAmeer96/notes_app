@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/OmarAmeer/notes_app/main/assets/images/app_logo.png" alt="Notes App Logo" width="30%">
-</p>
-
 <h1 align="center">Notes App</h1>
 
 <p align="center">Your Personal Pocket Companion for Organized Thoughts</p>
@@ -27,9 +23,9 @@ Embark on a journey of creativity and organization. Whether you're a coding enth
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/OmarAmeer96/Groceries-Photos/main/screenshot_1.png" alt="Screenshot 1" width="30%">
-  <img src="https://raw.githubusercontent.com/OmarAmeer96/Groceries-Photos/main/screenshot_2.png" alt="Screenshot 2" width="30%">
-  <img src="https://raw.githubusercontent.com/OmarAmeer96/Groceries-Photos/main/screenshot_3.png" alt="Screenshot 3" width="30%">
+  <img src="https://github.com/OmarAmeer96/Photos/blob/main/Screenshot_1.png" alt="Screenshot 1" width="30%">
+  <img src="https://github.com/OmarAmeer96/Photos/blob/main/Screenshot_2.png" alt="Screenshot 2" width="30%">
+  <img src="https://github.com/OmarAmeer96/Photos/blob/main/Screenshot_3.png" alt="Screenshot 3" width="30%">
 </p>
 
 ## 📞 Contact Me
