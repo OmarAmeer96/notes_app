@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:meta/meta.dart';
 import 'package:notes_app/constants.dart';
@@ -11,8 +12,10 @@ class AddNoteCubit extends Cubit<AddNoteState> {
 
   bool isLoading = false;
   bool get isCurrentlyLoading => isLoading;
+  Color color = const Color(0xff2191FB);
   // Method to add notes in the HIVE database
   addNote(NoteModel note) async {
+    note.color = color.value;
     isLoading = true;
     emit(AddNoteLoading());
     try {
