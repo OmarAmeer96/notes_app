@@ -11,13 +11,32 @@ class ColorsListView extends StatefulWidget {
 
 class _ColorsListViewState extends State<ColorsListView> {
   int currentIndex = 0;
+  List<Color> colors = const [
+    Color(0xff2191FB),
+    Colors.deepOrange,
+    Color(0xffBA274A),
+    Color(0xffD3AB9E),
+    Color(0xffB2ECE1),
+    Color(0xff8CDEDC),
+    Color(0xff5D576B),
+    Color(0xffF1DB4B),
+    Color(0xff397367),
+    Color(0xffBAB700),
+    Color(0xffA53F2B),
+    Color(0xff815355),
+    Color(0xffF4B266),
+    Color(0xff18F2B2),
+    Color(0xff929487),
+    Color(0xff9ED8DB),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 20 * 2,
       child: ListView.builder(
         physics: const BouncingScrollPhysics(),
-        itemCount: 10,
+        itemCount: colors.length,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           return Padding(
@@ -30,6 +49,7 @@ class _ColorsListViewState extends State<ColorsListView> {
               },
               child: ColorItem(
                 isActive: currentIndex == index,
+                color: colors[index],
               ),
             ),
           );
