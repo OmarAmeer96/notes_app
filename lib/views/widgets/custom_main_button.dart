@@ -4,6 +4,7 @@ import 'package:notes_app/constants.dart';
 import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
 import '../../services/show_error_snack_bar.dart';
+import '../../services/show_success_snack_bar.dart';
 import 'custom_circular_progress_indicator.dart';
 
 class CustomMainButton extends StatelessWidget {
@@ -27,7 +28,7 @@ class CustomMainButton extends StatelessWidget {
         if (state is AddNoteSuccess) {
           BlocProvider.of<NotesCubit>(context).fetchAllNotes();
           Navigator.pop(context);
-          // showSuccessSnackBar(context, state.successMessage);
+          showSuccessSnackBar(context, state.successMessage);
         } else if (state is AddNoteFailure) {
           showErrorSnackBar(context, state.errorMessage);
         }
