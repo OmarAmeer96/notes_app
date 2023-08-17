@@ -32,7 +32,7 @@ Embark on a journey of creativity and organization. Whether you're a coding enth
 
 Have questions, feedback, or just want to share your experience? Feel free to reach out:
 
-- **Omar Ameer** (Lead Developer)
+- **Omar Ameer**
   Email: [omar.ameer244@gmail.com](mailto:omar.ameer244@gmail.com)
 
 I'm excited to hear from you and help make your note-taking experience remarkable!
