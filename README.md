@@ -37,6 +37,16 @@ Have questions, feedback, or just want to share your experience? Feel free to re
 
 I'm excited to hear from you and help make your note-taking experience remarkable!
 
+<br><br>
+<div align="center">
+  <b>App Preview</b>
+</div>
+<br>
+
+<div align="center">
+  <video src="https://github.com/OmarAmeer96/notes_app/assets/93061060/fab6bd28-2ab2-4264-bc64-1c557bd5be04" controls></video>
+</div>
+
 ---
 
 <p align="center">
